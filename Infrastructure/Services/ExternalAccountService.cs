@@ -28,7 +28,7 @@ public class ExternalAccountService
     }
     
 
-    public ExternalAccountBase UpdateExternalAccount(ExternalAccountBase externalAccount)
+    public ExternalAccount UpdateExternalAccount(ExternalAccount externalAccount)
     {
         var find = _context.ExternalAccounts.Find(externalAccount.UserId);
         if (find != null)
@@ -58,8 +58,8 @@ public class ExternalAccountService
     public ExternalAccount GetExternalAccountByUserId(int id)
         {
             var find = _context.ExternalAccounts.Find(id);
-            if (find == null) return new ExternalAccountBase();
-            return new ExternalAccountBase()
+            if (find == null) return new ExternalAccount();
+            return new ExternalAccount()
             {
                 UserId = find.UserId,
                 FacebookEmail = find.FacebookEmail,
@@ -69,14 +69,14 @@ public class ExternalAccountService
 
 
 
-        public List<ExternalAccount> ExternalAccounts()
-        {
-            return _context.ExternalAccounts.Select(c => new ExternalAccountBase()
-            {
-                UserId = c.UserId,
-                FacebookEmail = c.FacebookEmail,
-                TwitterUserName = c.TwitterUserName
-            }).ToList();
-        }
+        // public List<ExternalAccount> ExternalAccounts()
+        // {
+        //     return _context.ExternalAccounts.Select(c => new ExternalAccountBase()
+        //     {
+        //         UserId = c.UserId,
+        //         FacebookEmail = c.FacebookEmail,
+        //         TwitterUserName = c.TwitterUserName
+        //     }).ToList();
+        // }
     
 }

@@ -26,9 +26,9 @@ public class PostCategoryService
     }
     
 
-    public PostCategoryBase UpdatePostCategory(PostCategoryBase postCategory)
+    public PostCategory UpdatePostCategory(PostCategory postCategory)
     {
-        var find = _context.PostCategories.Find(postCategory.Id);
+        var find = _context.PostCategoryess.Find(postCategory.Id);
         if (find != null)
         {
             find.Id = postCategory.Id;
@@ -53,11 +53,11 @@ public class PostCategoryService
         return false;
     }
 
-    public PostCategoryBase GetPostCategoryById(int id)
+    public PostCategory GetPostCategoryById(int id)
         {
-            var find = _context.PostCategories.Find(id);
-            if (find == null) return new PostCategoryBase();
-            return new PostCategoryBase()
+            var find = _context.PostCategoryess.Find(id);
+            if (find == null) return new PostCategory();
+            return new PostCategory()
             {
                 Id = find.Id,
                 PostId = find.PostId ,
@@ -69,7 +69,7 @@ public class PostCategoryService
 
     public List<PostCategoryBase> PostCategories()
     {
-        return _context.PostCategories.Select(c => new PostCategoryBase()
+        return _context.PostCategoryess.Select(c => new PostCategoryBase()
         {
             Id = c.Id,
             PostId = c.PostId,

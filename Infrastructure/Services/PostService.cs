@@ -32,7 +32,7 @@ public class PostService
     }
     
 
-    public PostBase UpdatePost(PostBase post)
+    public Post UpdatePost(Post post)
     {
         var find = _context.Posts.Find(post.Id);
         if (find != null)
@@ -63,11 +63,11 @@ public class PostService
         return false;
     }
 
-    public PostBase GetPostById(int id)
+    public Post GetPostById(int id)
         {
             var find = _context.Posts.Find(id);
-            if (find == null) return new PostBase();
-            return new PostBase()
+            if (find == null) return new Post();
+            return new Post()
             {
                 Id = find.Id,
                 Title = find.Title ,

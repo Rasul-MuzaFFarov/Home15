@@ -32,7 +32,7 @@ public class UserService
     }
     
 
-    public UserBase UpdateUser(UserBase tag)
+    public User UpdateUser(User tag)
     {
         var find = _context.Users.Find(tag.Id);
         if (find != null)
@@ -65,11 +65,11 @@ public class UserService
         return false;
     }
 
-    public UserBase GetUserById(int id)
+    public User GetUserById(int id)
         {
             var find = _context.Users.Find(id);
-            if (find == null) return new UserBase();
-            return new UserBase()
+            if (find == null) return new User();
+            return new User()
             {
                 Id = find.Id,
                 UserName=find.UserName,

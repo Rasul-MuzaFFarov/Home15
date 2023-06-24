@@ -1,3 +1,4 @@
+using Domain.Dtos.ExternalAccounts;
 using Domain.Entities;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -15,12 +16,7 @@ public class ExternalAccountController : ControllerBase
         _service = service;
     }
 
-    [HttpGet("GetExternalAccount")]
-    public List<ExternalAccount> GetExternalAccounts()
-    {
-        return _service.ExternalAccounts();
-    }
-    
+   
     [HttpGet("GetExternalAccountbyId")]
     public ExternalAccount GetExternalAccountById(int id)
     {
@@ -28,21 +24,21 @@ public class ExternalAccountController : ControllerBase
     }
     
     [HttpPost("AddExternalAccount")]
-    public ExternalAccount AddPublisher(ExternalAccount externalAccount)
+    public ExternalAccountBase AddPublisher(ExternalAccountBase externalAccount)
     {
         return _service.AddExternalAccount(externalAccount);
     }
 
-    [HttpPut("UpdatePublisher")]
-    public Publisher UpdatePublisher(Publisher publisher)
+    [HttpPut("UpdateExternalAccount")]
+    public ExternalAccount UpdateExternalAccount(ExternalAccount externalAccount)
     {
-        return _service.UpdatePublisher(publisher);
+        return _service.UpdateExternalAccount(externalAccount);
     }
     
-    [HttpDelete("DeletePublisher")]
-    public bool DeletePublisher(int id)
+    [HttpDelete("DeleteExternalAccount")]
+    public bool DeleteExternalAccount(int id)
     {
-        return _service.DeletePublisher(id);
+        return _service.DeleteExternalAccount(id);
     }
     
     

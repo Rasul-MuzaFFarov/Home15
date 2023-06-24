@@ -58,11 +58,11 @@ public class LocationService
         return false;
     }
 
-    public LocationBase GetLocationById(int id)
+    public Location GetLocationById(int id)
         {
             var find = _context.Locations.Find(id);
-            if (find == null) return new LocationBase();
-            return new LocationBase()
+            if (find == null) return new Location();
+            return new Location()
             {
                 Id = find.Id,
                 State = find.State ,

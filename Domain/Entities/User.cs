@@ -4,6 +4,7 @@ namespace Domain.Entities;
 
 public class User
 {
+    [Key]
     public int Id { get; set; }
     [MaxLength(45)]
     public string UserName { get; set; }
@@ -21,7 +22,6 @@ public class User
     public List<Post> Posts { get; set; }
     public List<PostComment> PostComments { get; set; }
     public List<PostFavorite> PostFavorites { get; set; }
-    public List<FollowingRelationShip> FollowingRelationships { get; set; }
     public List<ExternalAccount> ExternalAccounts { get; set; }
     public List<UserSetting> UserSettings { get; set; }
     public List<UserProfile> UserProfiles { get; set; }

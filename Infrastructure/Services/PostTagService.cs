@@ -29,7 +29,7 @@ public class PostTagService
     }
     
 
-    public PostTagBase UpdatePostTag(PostTagBase postTag)
+    public PostTag UpdatePostTag(PostTag postTag)
     {
         var find = _context.PostTags.Find(postTag.Id);
         if (find != null)

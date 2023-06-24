@@ -10,8 +10,6 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
 var connection = builder.Configuration.GetConnectionString("Default");
 builder.Services.AddDbContext<DataContext>(conf => conf.UseNpgsql(connection));
 builder.Services.AddScoped<CategoryService>();
@@ -26,6 +24,9 @@ builder.Services.AddScoped<PostTagService>();
 builder.Services.AddScoped<PostCategoryService>();
 builder.Services.AddScoped<TagService>();
 builder.Services.AddScoped<UserService>();
+var app = builder.Build();
+
+
 // builder.Services.AddScoped<UserSettingService>();
 
 // Configure the HTTP request pipeline.

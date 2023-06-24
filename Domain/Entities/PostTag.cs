@@ -1,7 +1,10 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Domain.Entities;
 
 public class PostTag
 {
+    [Key]
     public int Id { get; set; }
     public int PostId { get; set; }
     public int TagId { get; set; }

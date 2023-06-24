@@ -26,7 +26,7 @@ public class CategoryService
     }
     
 
-    public CategoryBase UpdateCategory(CategoryBase category)
+    public Category UpdateCategory(Category category)
     {
         var find = _context.Categories.Find(category.Id);
         if (find != null)
@@ -54,8 +54,8 @@ public class CategoryService
     public Category GetCategoryById(int id)
     {
         var find = _context.Categories.Find(id);
-        if (find == null) return new CategoryBase();
-        return new CategoryBase()
+        if (find == null) return new Category();
+        return new Category()
         {
             Id = find.Id,
             CategoryName = find.CategoryName

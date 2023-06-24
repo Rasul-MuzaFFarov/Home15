@@ -28,7 +28,7 @@ public class PostStatService
     }
     
 
-    public PostStatBase UpdatePostStat(PostStatBase postStat)
+    public PostStat UpdatePostStat(PostStat postStat)
     {
         var find = _context.PostStats.Find(postStat.PostId);
         if (find != null)
@@ -55,11 +55,11 @@ public class PostStatService
         return false;
     }
 
-    public PostStatBase GetPostStatById(int id)
+    public PostStat GetPostStatById(int id)
         {
             var find = _context.PostStats.Find(id);
-            if (find == null) return new PostStatBase();
-            return new PostStatBase()
+            if (find == null) return new PostStat();
+            return new PostStat
             {
                 PostId = find.PostId,
                 ViewCount=find.ViewCount,

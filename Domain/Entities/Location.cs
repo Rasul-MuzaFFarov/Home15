@@ -4,6 +4,7 @@ namespace Domain.Entities;
 
 public class Location
 {
+    [Key]
     public int Id { get; set; }
     [MaxLength(45)]
     public string City { get; set; }
